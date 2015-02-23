@@ -1,6 +1,6 @@
 #!/bin/sh
  
-ssh app@APP.SERVER.IP.ADDRESS <<EOF
+ssh app@104.131.140.88 <<EOF
   cd ~/skip
   git pull
   npm install --production
