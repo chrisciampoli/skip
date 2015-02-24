@@ -1,15 +1,24 @@
-var express = require('express');
- 
+var express = require('express'); 
 var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var port = process.env.PORT || 5000;
  
-app.get('/', function (req, res) {
-  res.send('hello jenkins');
+var router = express.Router();
+
+router.get('/', function(req, res) {
+	res.json({ message: 'hello jenkins'});
 });
 
-app.get('/search', function(req, res) {
-	res.send('reached search');
+router.get('/search', function(req, res) {
+	res.json({ message: 'reached search'});
 });
+
+app.use('/api', router);
  
-app.listen(process.env.PORT || 5000);
+app.listen(port);
  
 module.exports = app;
