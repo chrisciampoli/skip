@@ -1,14 +1,14 @@
 var request = require('supertest');
 var app = require('../app.js');
  
-describe('GET /api', function() {
+describe('GET /', function() {
   it('respond with hello jenkins', function(done) {
-    request(app).get('/').expect('hello jenkins', done);
+    request(app).get('/api').expect('hello jenkins', done);
   });
 });
 
-describe('GET /api/search', function() {
+describe('GET /search', function() {
   it('respond with reached search', function(done) {
-    request(app).get('/search').expect('reached search', done);
+    request(app).get('/api/search').expect('reached search', done);
   });
 });
