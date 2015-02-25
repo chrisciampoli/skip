@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/search', function(req, res) {
-	res.json({ message: 'reached search'});
+	res.json({ message: 'reached searchsssssss'});
 });
 
 app.use('/api', router);
